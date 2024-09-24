@@ -9,7 +9,3 @@
 
 # Privacy LED
 /vendor/bin/hw/android\.hardware\.lights-service\.tangorpro          u:object_r:hal_light_default_exec:s0
-
-# Cast Factory Credentials
-/vendor/bin/hw/android\.hardware\.drm-service\.castkey u:object_r:hal_drm_cast_exec:s0
-/mnt/vendor/persist/nest/cast_auth\.crt                u:object_r:device_cert_file:s0
