@@ -56,7 +56,7 @@ DISABLE_TELEPHONY_EUICC := true
 
 include device/google/tangorpro/audio/tangorpro/audio-tables.mk
 include device/google/gs201/device-shipping-common.mk
-include device/google/gs-common/touch/gti/gti.mk
+include device/google/gs-common/touch/gti/predump_gti.mk
 include device/google/gs-common/touch/nvt/nvt.mk
 include device/google/gs-common/led/led.mk
 include device/google/gs-common/wlan/dump.mk
@@ -258,7 +258,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_SOONG_NAMESPACES += \
 	vendor/lib64
 
+# TODO(b/366426322): Merge CastKey Drm plugin into `device/google/gs-common`.
 # CastKey Drm plugin modules
+PRODUCT_SOONG_NAMESPACES += \
+	device/google/tangorpro/cast_auth/mediadrm
 PRODUCT_PACKAGES += \
 	android.hardware.drm-service.castkey
 
