@@ -87,9 +87,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/google/tangorpro/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.tangorpro.rc
 
-# insmod files
+# insmod files. Kernel 5.10 prebuilts don't provide these yet, so provide our
+# own copy if they're not in the prebuilts.
+# TODO(b/369686096): drop this when 5.10 is gone.
+ifeq ($(wildcard $(TARGET_KERNEL_DIR)/init.insmod.*.cfg),)
 PRODUCT_COPY_FILES += \
-	device/google/tangorpro/init.insmod.tangorpro.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.tangorpro.cfg
+	device/google/tangorpro/init.insmod.tangorpro.cfg:$(TARGET_COPY_OUT_VENDOR_DLKM)/etc/init.insmod.tangorpro.cfg
+endif
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -99,6 +103,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/google/tangorpro/thermal_info_config_tangorpro.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json \
 	device/google/tangorpro/thermal_info_config_charge_tangorpro.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config_charge.json \
+
+# Shared Modem Platform
+SHARED_MODEM_PLATFORM_VENDOR := lassen
+
+# Shared Modem Platform
+include device/google/gs-common/modem/shared_modem_platform/shared_modem_platform.mk
 
 # Power HAL config
 PRODUCT_COPY_FILES += \
@@ -257,13 +267,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Trusty libbinder_trusty_paidl.so and libcast_auth.so
 PRODUCT_SOONG_NAMESPACES += \
 	vendor/lib64
-
-# TODO(b/366426322): Merge CastKey Drm plugin into `device/google/gs-common`.
-# CastKey Drm plugin modules
-PRODUCT_SOONG_NAMESPACES += \
-	device/google/tangorpro/cast_auth/mediadrm
-PRODUCT_PACKAGES += \
-	android.hardware.drm-service.castkey
 
 # MIPI Coex Configs
 PRODUCT_COPY_FILES += \
