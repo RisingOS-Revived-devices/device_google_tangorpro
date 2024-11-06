@@ -328,3 +328,8 @@ PRODUCT_PACKAGES += \
 # SKU specific RROs
 PRODUCT_PACKAGES += \
     SettingsOverlayGTU8P
+
+# PlayVideos
+PLAYVIDEOS_VERSION_DIR := 4.38.72.77
+$(call soong_config_set_bool,playvideos,use_device_specific_version,true)
+PRODUCT_SOONG_NAMESPACES += vendor/unbundled_google/packages/PlayVideos/$(PLAYVIDEOS_VERSION_DIR)
