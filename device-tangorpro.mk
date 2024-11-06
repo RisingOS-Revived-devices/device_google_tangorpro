@@ -258,7 +258,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_SOONG_NAMESPACES += \
 	vendor/lib64
 
+# TODO(b/366426322): Merge CastKey Drm plugin into `device/google/gs-common`.
 # CastKey Drm plugin modules
+PRODUCT_SOONG_NAMESPACES += \
+	device/google/tangorpro/cast_auth/mediadrm
 PRODUCT_PACKAGES += \
 	android.hardware.drm-service.castkey
 
@@ -281,6 +284,25 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Enable camera exif model/make reporting
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.exif_reveal_make_model=true
+
+# Set device family property for SMR
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.device_family=T6P
+
+# Set build properties for SMR builds
+ifeq ($(RELEASE_IS_SMR), true)
+    ifneq (,$(RELEASE_BASE_OS_TANGORPRO))
+        PRODUCT_BASE_OS := $(RELEASE_BASE_OS_TANGORPRO)
+    endif
+endif
+
+# Set build properties for EMR builds
+ifeq ($(RELEASE_IS_EMR), true)
+    ifneq (,$(RELEASE_BASE_OS_TANGORPRO))
+        PRODUCT_PROPERTY_OVERRIDES += \
+        ro.build.version.emergency_base_os=$(RELEASE_BASE_OS_TANGORPRO)
+    endif
+endif
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
