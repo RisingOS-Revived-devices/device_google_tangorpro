@@ -43,6 +43,9 @@ TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
 # disable/enable blur support, default is false
 TARGET_ENABLE_BLUR := true
 
+# Device is Tablet flag
+TARGET_DEVICE_IS_TABLET := true
+
 RISING_MAINTAINER=EliteDarkKaiser
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
