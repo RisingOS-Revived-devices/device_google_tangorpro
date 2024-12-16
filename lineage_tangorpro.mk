@@ -25,6 +25,26 @@ PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 2560
 
+# Addons
+TARGET_HAS_UDFPS := true
+
+# Gms 
+WITH_GMS := true
+
+# Ship Pixel Launcher
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+
+# Ship Google Camera
+TARGET_PREBUILT_GOOGLE_CAMERA := true
+
+# Lawnchair Prebuilt
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+
+# disable/enable blur support, default is false
+TARGET_ENABLE_BLUR := true
+
+RISING_MAINTAINER=EliteDarkKaiser
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="tangorpro-user 15 BP1A.250305.020.T2 13023825 release-keys" \
     BuildFingerprint=google/tangorpro/tangorpro:15/BP1A.250305.020.T2/13023825:user/release-keys \

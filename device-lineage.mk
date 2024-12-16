@@ -22,6 +22,9 @@ PRODUCT_PACKAGES += \
     TitanSettingsProviderOverlay \
     TitanSysuiConfigOverlay
 
+# Basic Call Recorder
+include vendor/bcr/bcr.mk
+
 # Build necessary packages for vendor
 
 # Codec2
