@@ -25,6 +25,9 @@ PRODUCT_PACKAGES += \
 # Basic Call Recorder
 include vendor/bcr/bcr.mk
 
+# PixelParts
+-include packages/apps/PixelParts/device.mk
+
 # Build necessary packages for vendor
 
 # Codec2
