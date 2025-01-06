@@ -104,12 +104,6 @@ PRODUCT_COPY_FILES += \
 	device/google/tangorpro/thermal_info_config_tangorpro.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json \
 	device/google/tangorpro/thermal_info_config_charge_tangorpro.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config_charge.json \
 
-# Shared Modem Platform
-SHARED_MODEM_PLATFORM_VENDOR := lassen
-
-# Shared Modem Platform
-include device/google/gs-common/modem/shared_modem_platform/shared_modem_platform.mk
-
 # Power HAL config
 PRODUCT_COPY_FILES += \
 	device/google/tangorpro/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
@@ -328,3 +322,8 @@ PRODUCT_PACKAGES += \
 # SKU specific RROs
 PRODUCT_PACKAGES += \
     SettingsOverlayGTU8P
+
+# PlayVideos
+PLAYVIDEOS_VERSION_DIR := 4.38.72.77
+$(call soong_config_set_bool,playvideos,use_device_specific_version,true)
+PRODUCT_SOONG_NAMESPACES += vendor/unbundled_google/packages/PlayVideos/$(PLAYVIDEOS_VERSION_DIR)
