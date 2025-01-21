@@ -41,7 +41,7 @@ TARGET_PREBUILT_GOOGLE_CAMERA := true
 TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
 
 # disable/enable blur support, default is false
-TARGET_ENABLE_BLUR := true
+TARGET_ENABLE_BLUR := false
 
 # Device is Tablet flag
 TARGET_DEVICE_IS_TABLET := true
