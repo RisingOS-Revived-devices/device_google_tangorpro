@@ -45,3 +45,6 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal
+
+#PRODUCT_HOST_PACKAGES += \
+       libartpalette
