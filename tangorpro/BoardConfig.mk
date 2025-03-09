@@ -25,13 +25,7 @@ BOARD_BOOTCONFIG += androidboot.load_modules_parallel=true
 # The modules which need to be loaded in sequential
 BOARD_KERNEL_CMDLINE += fips140.load_sequential=1
 BOARD_KERNEL_CMDLINE += exynos_drm.load_sequential=1
-
-ifdef PHONE_CAR_BOARD_PRODUCT
-    include device/google_car/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk 
-else
-    TARGET_SCREEN_DENSITY := 320
-endif
-
+TARGET_SCREEN_DENSITY := 320
 BOARD_USES_GENERIC_AUDIO := true
 USES_DEVICE_GOOGLE_TANGORPRO := true
 BOARD_KERNEL_CMDLINE += swiotlb=noforce
@@ -42,6 +36,10 @@ include device/google/gs-common/check_current_prebuilt/check_current_prebuilt.mk
 -include vendor/google_devices/tangorpro/proprietary/BoardConfigVendor.mk
 include device/google/tangorpro/sepolicy/tangorpro-sepolicy.mk
 include device/google/tangorpro/wifi/BoardConfig-wifi.mk
+
+ifdef PHONE_CAR_BOARD_PRODUCT
+    include device/google_car/$(PHONE_CAR_BOARD_PRODUCT)/BoardConfig.mk
+endif
 
 DEVICE_PATH := device/google/tangorpro
 VENDOR_PATH := vendor/google/tangorpro

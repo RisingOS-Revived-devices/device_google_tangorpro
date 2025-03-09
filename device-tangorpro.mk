@@ -57,7 +57,7 @@ DISABLE_TELEPHONY_EUICC := true
 
 include device/google/tangorpro/audio/tangorpro/audio-tables.mk
 include device/google/gs201/device-shipping-common.mk
-include device/google/gs-common/touch/gti/gti.mk
+include device/google/gs-common/touch/gti/predump_gti.mk
 include device/google/gs-common/touch/nvt/nvt.mk
 include device/google/gs-common/led/led.mk
 include device/google/gs-common/wlan/dump.mk
@@ -88,9 +88,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/google/tangorpro/conf/init.recovery.device.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.tangorpro.rc
 
-# insmod files
+# insmod files. Kernel 5.10 prebuilts don't provide these yet, so provide our
+# own copy if they're not in the prebuilts.
+# TODO(b/369686096): drop this when 5.10 is gone.
+ifeq ($(wildcard $(TARGET_KERNEL_DIR)/init.insmod.*.cfg),)
 PRODUCT_COPY_FILES += \
-	device/google/tangorpro/init.insmod.tangorpro.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.tangorpro.cfg
+	device/google/tangorpro/init.insmod.tangorpro.cfg:$(TARGET_COPY_OUT_VENDOR_DLKM)/etc/init.insmod.tangorpro.cfg
+endif
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -259,13 +263,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_SOONG_NAMESPACES += \
 	vendor/lib64
 
-# TODO(b/366426322): Merge CastKey Drm plugin into `device/google/gs-common`.
-# CastKey Drm plugin modules
-PRODUCT_SOONG_NAMESPACES += \
-	device/google/tangorpro/cast_auth/mediadrm
-PRODUCT_PACKAGES += \
-	android.hardware.drm-service.castkey
-
 # MIPI Coex Configs
 PRODUCT_COPY_FILES += \
     device/google/tangorpro/radio/tangor_camera_front_mipi_coex_table.csv:$(TARGET_COPY_OUT_VENDOR)/etc/modem/camera_front_mipi_coex_table.csv \
@@ -326,3 +323,8 @@ PRODUCT_PACKAGES += \
 # SKU specific RROs
 PRODUCT_PACKAGES += \
     SettingsOverlayGTU8P
+
+# PlayVideos
+PLAYVIDEOS_VERSION_DIR := 4.38.72.77
+$(call soong_config_set_bool,playvideos,use_device_specific_version,true)
+PRODUCT_SOONG_NAMESPACES += vendor/unbundled_google/packages/PlayVideos/$(PLAYVIDEOS_VERSION_DIR)

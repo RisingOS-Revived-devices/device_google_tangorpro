@@ -864,6 +864,12 @@
       "Value": "1014000"
     },
     {
+      "PowerHint": "CPU_LOAD_RESET",
+      "Node": "TAPreferHighCap",
+      "Duration": 33,
+      "Value": "1"
+    },
+    {
       "PowerHint": "CAMERA_LAUNCH",
       "Node": "MemFreq",
       "Duration": 1000,
