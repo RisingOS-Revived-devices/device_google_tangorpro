@@ -46,6 +46,7 @@ TARGET_ENABLE_BLUR := false
 # Device is Tablet flag
 TARGET_DEVICE_IS_TABLET := true
 
+# RisingOS stuff
 RISING_MAINTAINER=EliteDarkKaiser
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
