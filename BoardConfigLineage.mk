@@ -6,6 +6,7 @@
 
 BUILD_BROKEN_DUP_RULES := true
 DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
+RELAX_USES_LIBRARY_CHECK := true
 DEVICE_PATH := device/google/tangorpro
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_tangorpro
