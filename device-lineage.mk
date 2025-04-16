@@ -22,9 +22,6 @@ PRODUCT_PACKAGES += \
     TitanSettingsProviderOverlay \
     TitanSysuiConfigOverlay
 
-# PixelParts
--include packages/apps/PixelParts/device.mk
-
 # PixelSupport
 include device/google/gs-common/pixelsupport/pixelsupport.mk
 
