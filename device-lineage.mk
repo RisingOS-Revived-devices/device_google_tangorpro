@@ -25,9 +25,6 @@ PRODUCT_PACKAGES += \
 # PixelParts
 -include packages/apps/PixelParts/device.mk
 
-# Viper4Android FX
-include packages/apps/ViPER4AndroidFX/config.mk
-
 # PixelSupport
 include device/google/gs-common/pixelsupport/pixelsupport.mk
 
