@@ -24,11 +24,9 @@ PRODUCT_PACKAGES += \
 
 # Build necessary packages for vendor
 
-# Codec2
+# Dumpstate
 PRODUCT_PACKAGES += \
-    libacryl \
-    libacryl_hdr_plugin \
-    libexynosv4l2
+    dump_gsc.sh
 
 # Graphics
 PRODUCT_PACKAGES += \

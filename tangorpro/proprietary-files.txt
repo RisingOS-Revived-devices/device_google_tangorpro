@@ -3,8 +3,8 @@
 # product partition
 
 # AiAi
-product/priv-app/DeviceIntelligenceNetworkPrebuilt-U.32_V.7_playstore_astrea_20240725.00_RC01/DeviceIntelligenceNetworkPrebuilt-U.32_V.7_playstore_astrea_20240725.00_RC01.apk;PRESIGNED
-product/priv-app/DevicePersonalizationPrebuiltPixelTablet2023-U.32_V.7_playstore_aiai_20240725.00_RC08/DevicePersonalizationPrebuiltPixelTablet2023-U.32_V.7_playstore_aiai_20240725.00_RC08.apk;PRESIGNED
+product/priv-app/DeviceIntelligenceNetworkPrebuilt-astrea_20240329.00_RC02/DeviceIntelligenceNetworkPrebuilt-astrea_20240329.00_RC02.apk;PRESIGNED
+product/priv-app/DevicePersonalizationPrebuiltPixelTablet2023-bfinal_aiai_20250217.00_RC08/DevicePersonalizationPrebuiltPixelTablet2023-bfinal_aiai_20250217.00_RC08.apk;PRESIGNED
 
 # Audio
 product/etc/ambient/matcher_tah.leveldb
@@ -35,8 +35,8 @@ product/etc/permissions/com.google.android.apps.nest.dockmanager.app.xml
 product/etc/sysconfig/google-nest-hiddenapi-package-whitelist.xml
 product/etc/sysconfig/pixel_docking_experience_2022.xml
 product/priv-app/DockManagerPrebuilt/DockManagerPrebuilt.apk;PRESIGNED
-product/priv-app/PrebuiltGmsCore/m/optional/HomegraphPrebuilt.apk:product/priv-app/HomegraphPrebuilt/HomegraphPrebuilt.apk;PRESIGNED
-product/priv-app/PrebuiltGmsCore/m/optional/UsoniaPrebuilt.apk:product/priv-app/UsoniaPrebuilt/UsoniaPrebuilt.apk;PRESIGNED
+product/priv-app/PrebuiltGmsCore/m/optional/HomegraphPrebuilt/HomegraphPrebuilt.apk:product/priv-app/HomegraphPrebuilt/HomegraphPrebuilt.apk;PRESIGNED
+product/priv-app/PrebuiltGmsCore/m/optional/UsoniaPrebuilt/UsoniaPrebuilt.apk:product/priv-app/UsoniaPrebuilt/UsoniaPrebuilt.apk;PRESIGNED
 
 # Hardware info
 product/etc/permissions/com.google.android.hardwareinfo.xml
