@@ -648,7 +648,6 @@ lib/libprotobuf-cpp-lite-21.12.so
 lib/libreference-ril.so
 lib/libril.so
 lib/librilutils.so
-lib/libspeechenhancer.so
 lib/libspeexresampler.so
 lib/libstagefright_foundation.so
 lib/libtinyalsa.so
@@ -1141,7 +1140,6 @@ lib64/libregex.dylib.so
 lib64/libregex_syntax.dylib.so
 lib64/libril.so
 lib64/librilutils.so
-lib64/libspeechenhancer.so
 lib64/libspeexresampler.so
 lib64/libssl.so
 lib64/libstagefright_foundation.so

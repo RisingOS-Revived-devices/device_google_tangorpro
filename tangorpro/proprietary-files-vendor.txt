@@ -259,6 +259,7 @@ vendor/lib/libmahalcontroller.so
 vendor/lib/libmetrics_logger.so
 vendor/lib/libqorvo_uwb_params_nfcc.so
 vendor/lib/libsensorsuez.so
+vendor/lib/libspeechenhancer.so
 vendor/lib/libstreset21.so
 vendor/lib/libsueznanoappclients.so
 vendor/lib/libusf.so
@@ -383,6 +384,7 @@ vendor/lib64/libsensorsuez.so
 vendor/lib64/libsit_oem.so
 vendor/lib64/libsit_oem_proto.so
 vendor/lib64/libspeech_waveformaec_runner.so
+vendor/lib64/libspeechenhancer.so
 vendor/lib64/libstreset21.so
 vendor/lib64/libsueznanoappclients.so
 vendor/lib64/libtachyon_core.so
