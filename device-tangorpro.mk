@@ -67,9 +67,7 @@ $(call soong_config_set,lyric,camera_hardware,tangorpro)
 $(call soong_config_set,lyric,tuning_product,tangorpro)
 $(call soong_config_set,google3a_config,target_device,tangorpro)
 
-ifeq ($(filter factory_tangorpro, $(TARGET_PRODUCT)),)
 include device/google/tangorpro/uwb/uwb_calibration.mk
-endif
 
 # Preopt SystemUI
 ifneq ($(RELEASE_SYSTEMUI_USE_SPEED_PROFILE), true)
