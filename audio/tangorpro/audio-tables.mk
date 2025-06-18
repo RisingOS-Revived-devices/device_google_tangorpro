@@ -79,22 +79,3 @@ PRODUCT_COPY_FILES += \
     device/google/tangorpro/audio/$(AUDIO_TABLE_FOLDER)/tuning/apmg3/downlink_dock_config.pb:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/downlink_dock_config.pb \
     device/google/tangorpro/audio/$(AUDIO_TABLE_FOLDER)/tuning/apmg3/downlink_speaker_config.pb:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/downlink_speaker_config.pb \
     device/google/tangorpro/audio/$(AUDIO_TABLE_FOLDER)/tuning/apmg3/downlink_external_speaker_config.pb:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/downlink_external_speaker_config.pb
-
-# userdebug specific
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_COPY_FILES += \
-    device/google/tangorpro/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/BLUETOOTH.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/BLUETOOTH.mods \
-    device/google/tangorpro/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HANDSFREE.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSFREE.mods \
-    device/google/tangorpro/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HANDSET.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HANDSET.mods \
-    device/google/tangorpro/audio/$(AUDIO_TABLE_FOLDER)/tuning/fortemedia/HEADSET.mods:$(TARGET_COPY_OUT_VENDOR)/etc/aoc/HEADSET.mods
-
-# Mixer Path Configuration for Audio Speaker Calibration Tool crus_sp_cal
-PRODUCT_COPY_FILES += \
-    device/google/tangorpro/audio/$(AUDIO_TABLE_FOLDER)/cs35l41/crus_sp_cal_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/crus_sp_cal_mixer_paths.xml
-
-# Waves ini/mps files for unit tests of halcontroller
-PRODUCT_COPY_FILES += \
-    device/google/tangorpro/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/tests/test_config.ini:$(TARGET_COPY_OUT_VENDOR)/etc/test_config.ini \
-    device/google/tangorpro/audio/$(AUDIO_TABLE_FOLDER)/tuning/waves/tests/test_preset.mps:$(TARGET_COPY_OUT_VENDOR)/etc/test_preset.mps
-
-endif

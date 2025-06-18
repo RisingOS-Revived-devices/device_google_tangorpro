@@ -16,13 +16,8 @@
 #
 
 # Override BQR mask to enable LE Audio Choppy report
-ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.bluetooth.bqr.event_mask=262238
-else
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.bluetooth.bqr.event_mask=94
-endif
 
 # Not support LE Audio dual mic SWB call based on the current launch strategy
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -58,9 +53,6 @@ BOARD_SEPOLICY_DIRS += device/google/tangorpro/sepolicy/bluetooth
 PRODUCT_PACKAGES += android.hardware.bluetooth@1.1-service.synabtlinux \
         android.hardware.bluetooth.prebuilt.xml \
         android.hardware.bluetooth_le.prebuilt.xml
-
-# Bluetooth SAR test tools
-PRODUCT_PACKAGES_ENG += bt_sar_test
 
 # Bluetooth Tx power caps
 PRODUCT_COPY_FILES += \
