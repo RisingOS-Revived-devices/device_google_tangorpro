@@ -24,13 +24,6 @@ TARGET_BOARD_KERNEL_HEADERS ?= $(RELEASE_KERNEL_TANGORPRO_DIR)/kernel-headers
 
 BOARD_WITHOUT_RADIO := true
 
-$(call inherit-product-if-exists, vendor/google_devices/tangorpro/prebuilts/device-vendor-tangorpro.mk)
-$(call inherit-product-if-exists, vendor/google_devices/gs201/prebuilts/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/gs201/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google_devices/tangorpro/proprietary/tangorpro/device-vendor-tangorpro.mk)
-$(call inherit-product-if-exists, vendor/google_devices/tangorpro/proprietary/WallpapersTangorpro.mk)
-$(call inherit-product-if-exists, vendor/google_devices/tangorpro/proprietary/device-vendor.mk)
-
 $(call inherit-product, device/google/tangorpro/uwb/uwb_calibration_country.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/google/tangorpro/tangorpro/overlay
@@ -175,9 +168,6 @@ $(call soong_config_set,fp_hal_feature,pixel_product, product_b)
 # Fingerprint config
 include device/google/tangorpro/fingerprint_config.mk
 
-# Trusty liboemcrypto.so
-PRODUCT_SOONG_NAMESPACES += vendor/google_devices/tangorpro/prebuilts
-
 # Wifi SAP Interface Name
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.wifi.sap.interface=wlan1
@@ -206,10 +196,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # b/227692870
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.software.telecom.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.telecom.xml
-
-# Trusty libbinder_trusty_paidl.so and libcast_auth.so
-PRODUCT_SOONG_NAMESPACES += \
-        vendor/google/trusty/common
 
 # Cast auth
 PRODUCT_COPY_FILES += \
@@ -253,10 +239,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.camera.increase_thread_priority_nodes_stop=true \
     persist.vendor.camera.debug.bypass_csi_link_crc_error=true
-
-# Trusty libbinder_trusty_paidl.so and libcast_auth.so
-PRODUCT_SOONG_NAMESPACES += \
-	vendor/lib64
 
 # MIPI Coex Configs
 PRODUCT_COPY_FILES += \
@@ -315,8 +297,3 @@ PRODUCT_PACKAGES += \
 # SKU specific RROs
 PRODUCT_PACKAGES += \
     SettingsOverlayGTU8P
-
-# PlayVideos
-PLAYVIDEOS_VERSION_DIR := 4.38.72.77
-$(call soong_config_set_bool,playvideos,use_device_specific_version,true)
-PRODUCT_SOONG_NAMESPACES += vendor/unbundled_google/packages/PlayVideos/$(PLAYVIDEOS_VERSION_DIR)
