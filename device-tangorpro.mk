@@ -169,7 +169,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # 	ro.hardware.gatekeeper=software
 
 # Fingerprint
-include device/google/gs101/fingerprint/fpc1540/sw42/fpc1540.mk
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
+
 FPC_MODULE_TYPE=1542_S
 $(call soong_config_set,fp_hal_feature,pixel_product, product_b)
 # Fingerprint config
