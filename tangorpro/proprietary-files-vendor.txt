@@ -4,7 +4,6 @@ vendor/apex/com.google.pixel.camera.hal.apex
 vendor/apex/com.google.pixel.wifi.ext.apex
 vendor/bin/aocd
 vendor/bin/aocxd
-vendor/bin/flood.control.hal
 vendor/bin/hw/android.hardware.authsecret-service.citadel
 vendor/bin/hw/android.hardware.biometrics.fingerprint-service.fpc42
 vendor/bin/hw/android.hardware.bluetooth@1.1-service.synabtlinux
@@ -89,7 +88,6 @@ vendor/etc/init/fingerprint-fpc42.rc
 vendor/etc/init/google.hardware.media.c2@1.0-service.rc
 vendor/etc/init/hwc3-pixel.rc
 vendor/etc/init/init.camera.set-interrupts-ownership.rc
-vendor/etc/init/init.flood.control.rc
 vendor/etc/init/init.sscoredump.rc
 vendor/etc/init/init.usf.rc
 vendor/etc/init/init_dauntless.rc
@@ -135,7 +133,6 @@ vendor/etc/vintf/manifest/android.hardware.security.keymint-service.citadel.xml
 vendor/etc/vintf/manifest/android.hardware.weaver-service.citadel.xml
 vendor/etc/vintf/manifest/com.google.edgetpu.tachyon-service.xml
 vendor/etc/vintf/manifest/fingerprint-fpc42.xml
-vendor/etc/vintf/manifest/flood_control.xml
 vendor/etc/vintf/manifest/hwc3-default.xml
 vendor/etc/vintf/manifest/manifest.xml
 vendor/etc/vintf/manifest/manifest_android.hardware.drm-service.castkey.xml
