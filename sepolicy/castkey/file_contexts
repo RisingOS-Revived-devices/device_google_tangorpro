@@ -1,0 +1,4 @@
+/vendor/bin/hw/android\.hardware\.drm-service\.castkey u:object_r:hal_drm_cast_exec:s0
+
+# Cert
+/mnt/vendor/persist/nest/cast_auth\.crt                u:object_r:device_cert_file:s0
