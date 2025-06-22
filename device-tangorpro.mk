@@ -62,11 +62,6 @@ $(call soong_config_set,google3a_config,target_device,tangorpro)
 
 include device/google/tangorpro/uwb/uwb_calibration.mk
 
-# Preopt SystemUI
-ifneq ($(RELEASE_SYSTEMUI_USE_SPEED_PROFILE), true)
-PRODUCT_DEXPREOPT_SPEED_APPS += SystemUITitan  # For tablet
-endif
-
 # Touch files
 PRODUCT_COPY_FILES += \
         device/google/tangorpro/NVTCapacitiveTouchScreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/NVTCapacitiveTouchScreen.idc \
