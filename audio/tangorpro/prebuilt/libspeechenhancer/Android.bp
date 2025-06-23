@@ -34,11 +34,13 @@ cc_prebuilt_library_shared {
     },
 
     shared_libs: [
+        "libbinder_ndk",
         "libcutils",
         "libEGL",
         "libGLESv2",
         "liblog",
-        "libz",
         "libnativewindow",
+        "libsync",
+        "libz"
     ],
 }

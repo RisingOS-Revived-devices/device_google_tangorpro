@@ -72,7 +72,9 @@ include device/google/tangorpro/uwb/uwb_calibration.mk
 endif
 
 # Preopt SystemUI
+ifneq ($(RELEASE_SYSTEMUI_USE_SPEED_PROFILE), true)
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUITitan  # For tablet
+endif
 
 # Touch files
 PRODUCT_COPY_FILES += \
