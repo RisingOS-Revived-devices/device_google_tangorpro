@@ -22,6 +22,9 @@ PRODUCT_PACKAGES += \
     TitanSettingsProviderOverlay \
     TitanSysuiConfigOverlay
 
+# PixelSupport
+include device/google/gs-common/pixelsupport/pixelsupport.mk
+
 # Build necessary packages for vendor
 
 # Dumpstate
@@ -37,3 +40,6 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.dynamic_sensor_hal
+
+#PRODUCT_HOST_PACKAGES += \
+       libartpalette

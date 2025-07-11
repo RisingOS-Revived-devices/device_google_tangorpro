@@ -26,6 +26,9 @@ BOARD_WITHOUT_RADIO := true
 
 $(call inherit-product, device/google/tangorpro/uwb/uwb_calibration_country.mk)
 
+# Use libc variant by default
+PRODUCT_USE_SCUDO := true
+
 DEVICE_PACKAGE_OVERLAYS += device/google/tangorpro/tangorpro/overlay
 PRODUCT_SOONG_NAMESPACES += device/google/tangorpro
 PRODUCT_PACKAGES += \

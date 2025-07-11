@@ -25,6 +25,32 @@ PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
 TARGET_SCREEN_HEIGHT := 1600
 TARGET_SCREEN_WIDTH := 2560
 
+# Addons
+TARGET_HAS_UDFPS := true
+
+# Gms 
+WITH_GMS := true
+
+# Ship Pixel Launcher
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+
+# Ship Google Camera
+TARGET_PREBUILT_GOOGLE_CAMERA := true
+
+# Lawnchair Prebuilt
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+
+# disable/enable blur support, default is false
+TARGET_ENABLE_BLUR := false
+
+# Device is Tablet flag
+TARGET_DEVICE_IS_TABLET := true
+WITH_PIXEL_OVERLAYS := true
+WITH_PIXEL-STYLE := true
+
+# RisingOS stuff
+RISING_MAINTAINER=EliteDarkKaiser
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="tangorpro-user 16 BP2A.250705.008 13578956 release-keys" \
     BuildFingerprint=google/tangorpro/tangorpro:16/BP2A.250705.008/13578956:user/release-keys \
