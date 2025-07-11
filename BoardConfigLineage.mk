@@ -9,7 +9,8 @@ DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 RELAX_USES_LIBRARY_CHECK := true
 DEVICE_PATH := device/google/tangorpro
 # Init
-TARGET_VENDOR_INIT_LIB := //$(DEVICE_PATH):libinit_tangorpro
+INIT_LIB := //$(DEVICE_PATH):libinit_tangorpro
+$(call soong_config_set,libinit,vendor_init_lib,$(INIT_LIB))
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules.blocklist.vendor_kernel_boot
