@@ -33,6 +33,12 @@ WITH_GMS := true
 TARGET_SUPPORTS_QUICK_TAP := true
 RELEASE_PIXEL_2025_ENABLED := true
 
+# Ship Pixel Launcher
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+
+# Lawnchair Prebuilt
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+
 # disable/enable blur support, default is false
 TARGET_ENABLE_BLUR := false
 
@@ -42,7 +48,6 @@ WITH_PIXEL_OVERLAYS := true
 
 # RisingOS stuff
 RISING_MAINTAINER=EliteDarkKaiser
-RISING_VERSION := 8.0
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="tangorpro-user 16 BP2A.250805.005 13691446 release-keys" \
