@@ -38,7 +38,7 @@ TARGET_ENABLE_BLUR := false
 
 # Device is Tablet flag
 TARGET_DEVICE_IS_TABLET := true
-WITH_PIXEL_OVERLAYS := false
+WITH_PIXEL_OVERLAYS := true
 
 # RisingOS stuff
 RISING_MAINTAINER=EliteDarkKaiser
