@@ -48,6 +48,7 @@ WITH_PIXEL_OVERLAYS := true
 
 # RisingOS stuff
 RISING_MAINTAINER=EliteDarkKaiser
+RISING_VERSION := 8.1
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="tangorpro-user 16 BP2A.250805.005 13691446 release-keys" \
