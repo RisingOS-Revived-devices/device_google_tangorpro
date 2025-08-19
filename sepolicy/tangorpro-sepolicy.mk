@@ -10,3 +10,6 @@ BOARD_SEPOLICY_DIRS += device/google/tangorpro/sepolicy/fingerprint_capacitance
 
 # system_ext
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/google/tangorpro/sepolicy/system_ext/private
+
+# audio
+BOARD_SEPOLICY_DIRS += device/google/shusky/sepolicy/audio
